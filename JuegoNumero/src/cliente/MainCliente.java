@@ -47,7 +47,10 @@ public class MainCliente {
 						break;
 					}
 					
+					
 					cadena = flujo_entrada.readUTF();
+					System.out.println(cadena);
+					
 					//System.out.println(respuesta);
 				
 			}while(true);
