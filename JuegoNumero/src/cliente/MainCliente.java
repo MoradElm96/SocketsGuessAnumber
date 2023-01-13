@@ -72,14 +72,6 @@ public class MainCliente {
 		
 	}
 	
-	public static boolean EsNumero(String text) {
-	    int n;
-	    try {
-	      n=Integer.parseInt(text);
-	      return true;
-	    } catch (NumberFormatException ex) {
-	       return false;
-	    }
-	}
+	
 
 }
