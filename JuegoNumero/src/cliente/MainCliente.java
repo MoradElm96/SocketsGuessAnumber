@@ -38,7 +38,14 @@ public class MainCliente {
 			
 			while(true) {
 				System.out.println("Escribe el numero");
+			    
+			    
+			    while(!sc.hasNextInt()) {
+			    System.out.println("No se admiten letras!. Vuelve a escribir el numero");
+			    sc.next();
+			    }
 			    numeroCliente= sc.nextInt();
+			    
 			    flujo_salida.writeInt(numeroCliente);
 				
 				cadena = flujo_entrada.readUTF();
@@ -63,6 +70,16 @@ public class MainCliente {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public static boolean EsNumero(String text) {
+	    int n;
+	    try {
+	      n=Integer.parseInt(text);
+	      return true;
+	    } catch (NumberFormatException ex) {
+	       return false;
+	    }
 	}
 
 }
