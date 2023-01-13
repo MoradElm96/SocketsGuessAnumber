@@ -37,11 +37,11 @@ public class MainServer {
 			
 		
 			
-			do {
-					//recibimos el numero
+
+			
+			while(true) {
 				respuesta = flujo_entrada.readInt();
 				System.out.println("Respuesta:" + respuesta);
-				
 				if (respuesta < numeroAdivinar) {
 					flujo_salida.writeUTF("mayor");
 					
@@ -53,14 +53,10 @@ public class MainServer {
 					flujo_salida.writeUTF("Acertado");
 					break;
 				}
-				
-
-			} while (respuesta != numeroAdivinar);
+			}
 			
-			//comprobacion=true;
-			//System.out.println(respuesta);
-			//flujo_salida.writeBoolean(comprobacion);
-
+			
+		
 			cliente1.close();
 			servidor.close();
 		} catch (IOException e) {

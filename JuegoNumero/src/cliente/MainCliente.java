@@ -14,6 +14,7 @@ public class MainCliente {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
+			
 			Scanner sc = new Scanner(System.in);
 			int numeroCliente;
 			
@@ -27,44 +28,29 @@ public class MainCliente {
 			
 			
 		    
-			String cadena;
-			cadena= flujo_entrada.readUTF();
+			String cadena= flujo_entrada.readUTF();
+			System.out.println(cadena);
 			
-			System.out.println("servidor: "+cadena);
 			
 			String respuesta="Acertado";
-			//Boolean comprobacion=;
+	
 			
 			
-			do {
+			while(true) {
+				System.out.println("Escribe el numero");
+			    numeroCliente= sc.nextInt();
+			    flujo_salida.writeInt(numeroCliente);
 				
-				    System.out.println("Escribe el numero");
-				    numeroCliente= sc.nextInt();
-					flujo_salida.writeInt(numeroCliente);
-					
-					
-					if(respuesta.equalsIgnoreCase(cadena)) {
-						break;
-					}
-					
-					
-					cadena = flujo_entrada.readUTF();
-					System.out.println(cadena);
-					
-					//System.out.println(respuesta);
+				cadena = flujo_entrada.readUTF();
+				System.out.println("servidor: "+cadena);
 				
-			}while(true);
+				if(respuesta.equalsIgnoreCase(cadena)) {
+					break;
+				}
+			}
 			
-			
-			
-		
 			
 			System.out.println("correcto, fin");
-				
-				
-				
-		
-			
 			
 			sCliente.close();
 			
